@@ -1,2 +1,2 @@
 # HimanshuDwivedi_Capstone
-RAG Based Knowledge Assistant
+RAG Based Knowledge Assistant.
