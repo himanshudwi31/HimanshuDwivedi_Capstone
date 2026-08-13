@@ -202,6 +202,10 @@ if __name__ == "__main__":
         n      = write_answers(con, run_id, answers)
     log.info(f"persisted run {run_id} with {n} answers to {settings.results_db}")
 
+    total_cost = sum(a.cost_usd for a in answers)
+    print(f"total cost: ${total_cost:.6f}")
+    log.info(f"total_cost_usd: {total_cost:.6f}")
+
 
     # sample = [
     #     Question(text="What is RAG in one sentence?"),

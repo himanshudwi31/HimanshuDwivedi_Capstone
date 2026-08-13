@@ -1,0 +1,15 @@
+# Lab 2 — Coding-assistant verification note
+## The change
+Added total cost for running LLM call with 20 questions
+## The ask
+Add total-cost reporting at the end ( sum(a.cost_usd for a in answers) printed and
+logged)
+## What it produced
+It added three lines of code to iterate from LLM response, picked the individual cost and generated sum of cost. Then printed it and added to logs as well
+## What I verified before accepting
+- Diff read: Change in code where three lines were added
+- Test run: Run python -m src.pipeline.pipeline and saw the total cost in terminal and logs
+- Security check: got correct result
+>
+## What I changed before committing
+Nothing
