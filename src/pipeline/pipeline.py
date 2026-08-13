@@ -196,6 +196,13 @@ if __name__ == "__main__":
     )
     print(f"wrote {len(answers)} answers to {settings.results_json} in {elapsed:.2f}s")
     
+    from .store import connect, write_run, write_answers
+    with connect(settings.results_db) as con:
+        run_id = write_run(con, summary)
+        n      = write_answers(con, run_id, answers)
+    log.info(f"persisted run {run_id} with {n} answers to {settings.results_db}")
+
+
     # sample = [
     #     Question(text="What is RAG in one sentence?"),
     #     Question(text="Name three uses of vector databases."),
